@@ -1,0 +1,62 @@
+import random
+words = ["small", "large,", "boats", "wagon",]
+hang_list = list("_ _ _ _ _")
+hang_string = "".join(map(str, hang_list))
+random_selection = random.choice(words)
+letter_list = list(random_selection.strip(","))
+tries = 0
+
+print("This hangman game uses five letter words")
+print(hang_string)
+print("Number of tries left = ", 5 - tries)
+
+while tries != 5:
+    print()
+    print("Input your guess")
+
+    user_input = input()
+
+    if user_input == letter_list[0]:
+        hang_list[0] = user_input
+        hang_string = "".join(map(str,hang_list))
+        print(hang_string)
+        print("Number of tries left = ", 5 - tries)
+        print()
+    elif user_input == letter_list[1]:
+        hang_list[2] = user_input
+        hang_string = "".join(map(str,hang_list))
+        print(hang_string)
+        print("Number of tries left = ", 5 - tries)
+        print()
+    elif user_input == letter_list[2]:
+        hang_list[4] = user_input
+        hang_string = "".join(map(str,hang_list))
+        print(hang_string)
+        print("Number of tries left = ", 5 - tries)
+        print()
+    elif user_input == letter_list[3]:
+        hang_list[6] = user_input
+        hang_string = "".join(map(str,hang_list))
+        print(hang_string)
+        print("Number of tries left = ", 5 - tries)
+        print()
+    elif user_input == letter_list[4]:
+        hang_list[8] = user_input
+        hang_string = "".join(map(str,hang_list))
+        print(hang_string)
+        print("Number of tries left = ", 5 - tries)
+        print()
+    else:
+        tries = tries + 1
+        print("That was not correct")
+        print("Number of tries left = ", 5-tries)
+if tries == 5:
+    print()
+    print("You lost, please try again")
+    print("number of tries remaining", 5 - tries)
+    print()
+else:
+    print()
+    print("You won")
+    print("number of tries remaining", 5 - tries)
+    print()
